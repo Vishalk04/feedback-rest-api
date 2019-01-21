@@ -32,6 +32,7 @@ node {
     
     stage('kubectl deploy'){
           
+        
         switch (namespace) {
             case "feedback":
                 sh("kubectl get ns ${namespace} --kubeconfig=/home/yash/.kube/config || kubectl create namespace ${namespace} --kubeconfig=/home/yash/.kube/config")
