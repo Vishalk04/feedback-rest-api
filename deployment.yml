@@ -5,7 +5,7 @@ metadata:
   labels:
     app: hc-feedback-pipeline
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: hc-feedback-pipeline
