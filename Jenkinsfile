@@ -1,5 +1,6 @@
 node {
     def app;
+    
     def namespace = 'feedback';
 
     stage('Clone repository') {
