@@ -11,6 +11,6 @@ spec:
         apiVersion: apps/v1beta1
         kind: Deployment
         name: hc-feedback-pipeline
-    minReplicas: 2
-    maxReplicas: 5
+    minReplicas: 1
+    maxReplicas: 2
     targetCPUUtilizationPercentage: 10
