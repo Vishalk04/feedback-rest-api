@@ -32,6 +32,7 @@ node {
     
     stage('kubectl deploy'){
          
+        
       
         switch (namespace) {
             case "feedback":
