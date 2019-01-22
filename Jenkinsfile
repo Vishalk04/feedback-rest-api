@@ -1,6 +1,6 @@
 node {
     def app;    
-    def namespace = 'feedback';
+    def namespace = 'feedback1';
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
