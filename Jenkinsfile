@@ -31,7 +31,6 @@ node {
     }
     
     stage('kubectl deploy'){
-         
         
       
         switch (namespace) {
