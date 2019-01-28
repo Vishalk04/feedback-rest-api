@@ -75,33 +75,36 @@ public class FeedbackResourceTest {
 	}
 	
 	
+	
 	@Test
 	public void testNonNullity() throws ParseException {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = format.parse("2019-01-19");
-		FeedbackResource feedbackResourceOne = new FeedbackResource("jd123", "John Deere", 5, "greate", date);
+		FeedbackResource feedbackResourceOne = new FeedbackResource("jd123", "John Deere", 5, "great", date);
+		FeedbackResource feedbackResourceTwo = new FeedbackResource("jd123", "John Deere", 5, "great", date);
 		
 		assertFalse(feedbackResourceOne.equals(null));
 		
+		
 		feedbackResourceOne.setUsername(null);
 		assertFalse(feedbackResourceOne.equals(feedbackResourceTwo));
+		feedbackResourceOne.setUsername("jd123");
 	}
 	
 	
-	@Test
-	public void testDifference() throws ParseException{
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		Date date = format.parse("2019-01-19");
-		FeedbackResource feedbackResourceOne = new FeedbackResource("jd123", "John Deere", 5, "great", date);
-		FeedbackResource feedbackResourceTwo = new FeedbackResource("ysh123", "Yash", 5, "great", date);
-
-		assertFalse(feedbackResourceOne.equals(feedbackResourceTwo));
-	}
+@Test
+public void testDifference() throws ParseException{ 
+	SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+	Date date = format.parse("2019-01-19");
+	FeedbackResource feedbackResourceOne = new FeedbackResource("jd123", "John Deere", 5, "great", date);
+	FeedbackResource feedbackResourceTwo = new FeedbackResource("ysh123", "Yash", 5, "great", date);
+	
+	assertFalse(feedbackResourceOne.equals(feedbackResourceTwo));
+}
 	@Test
 	public void testEquality() throws ParseException {
 
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-
 		Date date = format.parse("2019-01-19");
 		FeedbackResource feedbackResourceOriganal = new FeedbackResource("jd123", "John Deere", 5, "great", date);
 		FeedbackResource feedbackResourceNew = new FeedbackResource("jd123", "John Deere", 5, "great", date);
@@ -113,7 +116,10 @@ public class FeedbackResourceTest {
 		feedbackResourceOriganal.setUsername("user123");
 		assertFalse(feedbackResourceOriganal.equals(feedbackResourceNew));
 		assertFalse(feedbackResourceOriganal.hashCode() == feedbackResourceNew.hashCode());
+		feedbackResourceOriganal.setUsername("jd123");
 			
 	}
+	
+
 
 }
