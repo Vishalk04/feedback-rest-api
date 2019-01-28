@@ -89,6 +89,22 @@ public class FeedbackResourceTest {
 		feedbackResourceOne.setUsername(null);
 		assertFalse(feedbackResourceOne.equals(feedbackResourceTwo));
 		feedbackResourceOne.setUsername("jd123");
+		
+		feedbackResourceOne.setSource(null);;
+		assertFalse(feedbackResourceOne.equals(feedbackResourceTwo));
+		feedbackResourceOne.setSource("John Deere");
+		
+		feedbackResourceOne.setRating(null);
+		assertFalse(feedbackResourceOne.equals(feedbackResourceTwo));
+		feedbackResourceOne.setRating(5);
+		
+		feedbackResourceOne.setComment(null);
+		assertFalse(feedbackResourceOne.equals(feedbackResourceTwo));
+		feedbackResourceOne.setComment("great");
+		
+		feedbackResourceOne.setCreatedTime(null);
+		assertFalse(feedbackResourceOne.equals(feedbackResourceTwo));
+		feedbackResourceOne.setCreatedTime(date);
 	}
 	
 	
@@ -117,6 +133,27 @@ public void testDifference() throws ParseException{
 		assertFalse(feedbackResourceOriganal.equals(feedbackResourceNew));
 		assertFalse(feedbackResourceOriganal.hashCode() == feedbackResourceNew.hashCode());
 		feedbackResourceOriganal.setUsername("jd123");
+		
+		feedbackResourceOriganal.setComment("good");
+		assertFalse(feedbackResourceOriganal.equals(feedbackResourceNew));
+		assertFalse(feedbackResourceOriganal.hashCode() == feedbackResourceNew.hashCode());
+		feedbackResourceOriganal.setComment("great");
+	
+		feedbackResourceOriganal.setRating(1);
+		assertFalse(feedbackResourceOriganal.equals(feedbackResourceNew));
+		assertFalse(feedbackResourceOriganal.hashCode() == feedbackResourceNew.hashCode());
+		feedbackResourceOriganal.setRating(5);
+	
+		feedbackResourceOriganal.setSource("yash");
+		assertFalse(feedbackResourceOriganal.equals(feedbackResourceNew));
+		assertFalse(feedbackResourceOriganal.hashCode() == feedbackResourceNew.hashCode());
+		feedbackResourceOriganal.setSource("John Deere");
+	
+		Date createdTime = format.parse("2019-01-01");
+		feedbackResourceOriganal.setCreatedTime(createdTime);
+		assertFalse(feedbackResourceOriganal.equals(feedbackResourceNew));
+		assertFalse(feedbackResourceOriganal.hashCode() == feedbackResourceNew.hashCode());
+		feedbackResourceOriganal.setCreatedTime(date);
 			
 	}
 	
